@@ -1,0 +1,40 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VnE-GO</title>
+    <link rel="stylesheet" href="~/css/vne.css" asp-append-version="true" />
+</head>
+<body class="vne-body">
+    <nav class="vne-nav">
+        <a class="vne-home" asp-area="" asp-page="/Index" aria-label="Trang chủ">&#8962;</a>
+        <a class="vne-brand" asp-area="" asp-page="/Index">VnE-GO</a>
+        <a href="#">Thời sự</a>
+        <a href="#">Thế giới</a>
+        <a href="#">Kinh doanh</a>
+        <a href="#">Khoa học công nghệ</a>
+        <a href="#">Góc nhìn</a>
+        <a href="#">Spotlight</a>
+        <a href="#">Bất động sản</a>
+        <a href="#">Sức khỏe</a>
+        <a href="#">Giải trí</a>
+        <a href="#">Thể th...</a>
+    </nav>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="vne-footer">
+        &copy; 2026 - VnE-GO - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
