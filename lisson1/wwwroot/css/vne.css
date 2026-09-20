@@ -59,6 +59,25 @@ body.vne-body {
     padding: 24px;
 }
 
+/* General centered container used by pages like About */
+.container {
+    max-width: 800px;
+    margin: 28px auto; /* center horizontally with vertical spacing */
+    padding: 20px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.container p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
 .tin-noi-bat {
     display: flex;
     gap: 28px;
