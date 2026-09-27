@@ -1,0 +1,21 @@
+﻿@model lison3.Models.Book
+
+@{
+    ViewData["Title"] = "Chi tiết sách";
+}
+
+<div class="container mt-4" style="max-width: 500px;">
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            <h4>📖 Chi tiết sách #@Model.Id</h4>
+        </div>
+        <div class="card-body">
+            <p><strong>Mã sách:</strong> @Model.Id</p>
+            <p><strong>Tên sách:</strong> @Model.Name</p>
+            <p><strong>Giá bán:</strong> $@Model.Price</p>
+        </div>
+        <div class="card-footer">
+            <a asp-action="Index" class="btn btn-secondary">Quay lại danh sách</a>
+        </div>
+    </div>
+</div>
