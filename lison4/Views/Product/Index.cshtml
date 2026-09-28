@@ -1,0 +1,56 @@
+﻿@model IEnumerable<YourProjectName.Models.Product>
+
+@{
+    ViewData["Title"] = "Danh sách sản phẩm";
+
+    
+    DayOfWeek today = DateTime.Now.DayOfWeek;
+    bool isWeekend = (today == DayOfWeek.Saturday || today == DayOfWeek.Sunday);
+}
+
+<div class="container mt-4">
+    
+    @if (isWeekend)
+    {
+        <div class="alert alert-success" role="alert">
+            🎉 <strong>Hôm nay là cuối tuần!</strong> Chúc bạn mua sắm vui vẻ.
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">
+            💼 <strong>Hôm nay là ngày trong tuần (Thứ @((int)today + 1)).</strong> Chúc bạn một ngày làm việc hiệu quả!
+        </div>
+    }
+
+    <h2 class="mb-3">Danh sách sản phẩm</h2>
+
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>Mã SP (ID)</th>
+                <th>Tên sản phẩm</th>
+                <th>Giá bán</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.Id</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price.ToString("N0") VNĐ</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center">Không có sản phẩm nào trong CSDL.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
