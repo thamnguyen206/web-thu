@@ -7,5 +7,6 @@ namespace YourProjectName.Models
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<Product> Product { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

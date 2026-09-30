@@ -20,5 +20,22 @@ namespace YourProjectName.Controllers
 
             return View(products);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Name,Price")] Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(product);
+                await _context.SaveChangesAsync(); 
+
+                return RedirectToAction(nameof(Index)); 
+            }
+
+           
+            var products = _context.Products.ToList();
+            return View("Index", products);
+        }
     }
 }
